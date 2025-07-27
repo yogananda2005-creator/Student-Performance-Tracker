@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Grade</title>
+</head>
+<body>
+    <h2>Add Grade</h2>
+    <form method="post">
+        Roll Number: <input type="text" name="roll" required><br>
+        Subject: <input type="text" name="subject" required><br>
+        Grade (0-100): <input type="number" name="grade" required><br>
+        <input type="submit" value="Add Grade">
+    </form>
+    <a href="{{ url_for('index') }}">Back</a>
+</body>
+</html>

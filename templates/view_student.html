@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Student</title>
+</head>
+<body>
+    <h2>View Student Details</h2>
+    <form method="post">
+        Enter Roll Number: <input type="text" name="roll" required>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if student %}
+        <h3>Name: {{ student[0] }}</h3>
+        <h4>Grades:</h4>
+        <ul>
+            {% for subject, grade in grades %}
+                <li>{{ subject }}: {{ grade }}</li>
+            {% endfor %}
+        </ul>
+        <strong>Average: {{ average|round(2) }}</strong>
+    {% elif student is not none %}
+        <p>Student not found.</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Back</a> 
+     <a href="index.html">Back</a>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Student</title>
+</head>
+<body>
+    <h2>View Student Details</h2>
+    <form method="post">
+        Enter Roll Number: <input type="text" name="roll" required>
+        <input type="submit" value="Search">
+    </form>
+
+    {% if student %}
+        <h3>Name: {{ student[0] }}</h3>
+        <h4>Grades:</h4>
+        <ul>
+            {% for subject, grade in grades %}
+                <li>{{ subject }}: {{ grade }}</li>
+            {% endfor %}
+        </ul>
+        <strong>Average: {{ average|round(2) }}</strong>
+    {% elif student is not none %}
+        <p>Student not found.</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Back</a>
+</body>
+</html> -->
